@@ -48,29 +48,6 @@ class GeofenceTransitionsJobIntentService : JobIntentService(), CoroutineScope {
             }
         }
     }
-//        if (geofencingEvent.hasError()) {
-//            return
-//        }
-//
-//        if (geofencingEvent.geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER) {
-//            val fenceId = when {
-//                geofencingEvent.triggeringGeofences.isNotEmpty() ->
-//                    geofencingEvent.triggeringGeofences[0].requestId
-//                else -> {
-//                    Log.e("TAG", "No Geofence Trigger Found! Abort mission!")
-//                    return
-//                }
-//            }
-//            val foundIndex = GeofencingConstants.LANDMARK_DATA.indexOfFirst {
-//                it.id == fenceId
-//            }
-//            if ( -1 == foundIndex ) {
-//                Log.e("TAG", "Unknown Geofence: Abort Mission")
-//                return
-//            }
-//
-//            sendNotification(geofencingEvent.triggeringGeofences)
-//        }
 
     private fun sendNotification(triggeringGeofences: List<Geofence>) {
         triggeringGeofences.forEach {

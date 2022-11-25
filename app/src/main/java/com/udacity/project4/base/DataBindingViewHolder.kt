@@ -12,6 +12,7 @@ class DataBindingViewHolder<T>(private val binding: ViewDataBinding) :
 
     fun bind(item: T) {
         binding.setVariable(BR.item , item)
+
         binding.executePendingBindings()
     }
 }
